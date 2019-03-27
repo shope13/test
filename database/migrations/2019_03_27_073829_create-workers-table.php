@@ -15,14 +15,14 @@ class CreateWorkersTable extends Migration
     {
         Schema::create('workers', function (Blueprint $table) {
             $table->bigIncrements('id')->autoIncrement()->unique();
-            $table->string('fio');
+            $table->string('name');
             $table->string('post');
             $table->date('d_of_emp');
             $table->integer('salary');
-            $table->integer('id_boss');
+            $table->integer('id_boss')-> nullable();
             $table->timestamps();
 
-            $table->foreign('id_boss')->references('id')->on('workers')->onDelete('cascade');
+            $table->foreign('id_boss')->references('id')->on('workers')->onDelete('set null');
         });
 
     }
