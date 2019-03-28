@@ -11,6 +11,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        \App\Worker::create(
+            array(
+                'name' => 'John',
+                'post' => 'Boss',
+                'd_of_emp' => '2011-11-11',
+                'salary' => 11
+
+                ));
     }
 }
