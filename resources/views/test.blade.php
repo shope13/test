@@ -33,9 +33,10 @@
     <ul>
         @foreach ($workers as $worker)
         <li>
-            <span class="caret">{{ $worker->name}}</span>
+            <span class="caret">{{ $worker->name}}
+                {{$worker->post}}</span>
             <ul class="nested">
-                <li>{{$worker->post}}</li>
+                <li>{{ $worker->name}}<br>{{$worker->post}}</li>
             </ul>
         </li>
         @endforeach
