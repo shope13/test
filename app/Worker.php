@@ -13,7 +13,7 @@ class Worker extends Model
 
     public function worker()
     {
-        return $this->belongsTo('Worker::class', 'id', 'id_boss');
+        return $this->belongsTo('Worker::class', 'id');
     }
 }
 
