@@ -21,11 +21,11 @@ class CreateWorkersTable extends Migration
             $table->integer('salary');
             $table->bigInteger('id_boss')->unsigned()-> nullable();
             $table->timestamps();
-        });
 
-        Schema::table('workers', function (Blueprint $table){
             $table->foreign('id_boss')->references('id')->on('workers')->onDelete('set null');
         });
+
+
 
     }
 
