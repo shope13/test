@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Worker;
 use Illuminate\Http\Request;
 
 class WorkerController extends Controller
 {
     public function index()
     {
-        return view('test');
+        $workers = Worker::paginate(10000);
+        return view('test', ['workers' => $workers]);
     }
 }
