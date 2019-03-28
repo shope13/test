@@ -6,6 +6,7 @@
  */
 
 require('./bootstrap');
+require('./three-render');
 
 window.Vue = require('vue');
 
