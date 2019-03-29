@@ -22,32 +22,39 @@ class DbFiller
 {
     const MAX_DEEP = 5;
     const MIN_DEEP = 1;
-    const NEEDED_ROWS = 5;
-
+    const NEEDED_ROWS = 15;
 
     public $employees = [
+        1 => [],
+        2 => [],
+        3 => [],
+        4 => [],
+        5 => []
+    ];
+
+    public $post = [
         1 => [
-            'Chief Technical Oficer',
-            'Team Lead',
-            'Teach Lead'
+            1 => 'Chief Technical Oficer',
+            2 => 'Team Lead',
+            3 => 'Teach Lead'
         ],
         2 => [
-            'Project Manager',
-            'Software Architect'
+            1 => 'Project Manager',
+            2 => 'Software Architect'
         ],
         3 => [
-            'Senior SE',
-            'Senior QA'
+            1 => 'Senior SE',
+            2 => 'Senior QA'
         ],
         4 => [
-            'Middle SE',
-            'Middle QA',
-            'System Administrator'
+            1 => 'Middle SE',
+            2 => 'Middle QA',
+            3 => 'System Administrator'
         ],
         5 => [
-            'Junior SE',
-            'Junior QA',
-            'Technical Support'
+            1 => 'Junior SE',
+            2 => 'Junior QA',
+            3 => 'Technical Support'
         ]
     ];
 
@@ -56,6 +63,7 @@ class DbFiller
      */
     public function getPreparedValues()
     {
+        $this->prepareDbValues();
         return $this->employees;
     }
 
@@ -78,11 +86,16 @@ class DbFiller
                 $parentId = array_rand($this->employees[$deepLvl-1], 1);
             }
 
+
+            $j = mt_rand(1, count($this->post[$deepLvl]));
+//            dd($deepLvl,$j);
+
+
             $this->employees[$deepLvl][$id] = [
                 'id' => $id,
                 'name' => $faker->name,
-                'post' => array_rand($this->employees[$deepLvl], 1),
-                'd_of_emp' => $faker->date(),
+                'post' => $this->post[$deepLvl][$j],
+                'DateEmp' => $faker->date(),
                 'salary' => mt_rand(400, 2600),
                 'parent_id' => $parentId
             ];
