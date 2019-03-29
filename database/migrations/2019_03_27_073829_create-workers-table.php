@@ -17,12 +17,12 @@ class CreateWorkersTable extends Migration
             $table->bigIncrements('id')->unsigned();
             $table->string('name');
             $table->string('post');
-            $table->date('d_of_emp');
+            $table->date('DateEmp');
             $table->integer('salary');
-            $table->bigInteger('id_boss')->unsigned()-> nullable();
+            $table->bigInteger('parentId')->unsigned()-> nullable();
             $table->timestamps();
 
-            $table->foreign('id_boss')->references('id')->on('workers')->onDelete('set null');
+            $table->foreign('parentId')->references('id')->on('workers')->onDelete('set null');
         });
 
 
