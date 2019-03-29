@@ -20,14 +20,21 @@ class WorkersTableSeeder extends Seeder
         $workers = array_reduce($a, 'array_merge', array());
 //        dd($workers);
 
-        DB::table('workers')->insert($workers);
+        // break data into max size of 200
+        $chunks = array_chunk($workers, 1000);
+
+        foreach ($chunks as $chunk) {
+            DB::table('workers')->insert($chunk);
+        }
+
+
     }
 }
 class DbFiller
 {
     const MAX_DEEP = 5;
     const MIN_DEEP = 1;
-    const NEEDED_ROWS = 15;
+    const NEEDED_ROWS = 50000;
 
     public $employees = [
         1 => [],
@@ -81,7 +88,7 @@ class DbFiller
     {
         $faker = Faker::create();
         for ($id = 1; $id <= self::NEEDED_ROWS; $id++) {
-            $parentId = 'NULL';
+            $parentId = NULL;
             $deepLvl = mt_rand(self::MIN_DEEP, self::MAX_DEEP);
             while (empty($this->employees[$deepLvl-1]) && $deepLvl > self::MIN_DEEP) {
                 $deepLvl--;
@@ -95,24 +102,17 @@ class DbFiller
             $j = mt_rand(1, count($this->post[$deepLvl]));
 //            dd($deepLvl,$j);
 
-            if ($parentId!='NULL') {
-                $this->employees[$deepLvl][$id] = [
-                    'id' => $id,
-                    'name' => $faker->name,
-                    'post' => $this->post[$deepLvl][$j],
-                    'DateEmp' => $faker->date(),
-                    'salary' => mt_rand(400, 2600),
-                    'parent_id' => $parentId
-                ];
-            }
-            else $this->employees[$deepLvl][$id] = [
+
+            $this->employees[$deepLvl][$id] = [
                 'id' => $id,
                 'name' => $faker->name,
                 'post' => $this->post[$deepLvl][$j],
                 'DateEmp' => $faker->date(),
-                'salary' => mt_rand(400, 2600)
-
+                'salary' => mt_rand(400, 2600),
+                'parent_id' => $parentId
             ];
+
+
         }
     }
 }
