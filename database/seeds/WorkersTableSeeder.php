@@ -1,7 +1,7 @@
 <?php
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
-
+use \Illuminate\Support\Facades\DB;
 
 class WorkersTableSeeder extends Seeder
 {
@@ -13,8 +13,13 @@ class WorkersTableSeeder extends Seeder
     public function run()
     {
         $dbFiller = new DbFiller();
-        $workers = $dbFiller->getPreparedValues();
-        dd($workers);
+        $a = $dbFiller->getPreparedValues();
+//        dd($workers);
+
+
+        $workers = array_reduce($a, 'array_merge', array());
+//        dd($workers);
+
         DB::table('workers')->insert($workers);
     }
 }
@@ -90,17 +95,24 @@ class DbFiller
             $j = mt_rand(1, count($this->post[$deepLvl]));
 //            dd($deepLvl,$j);
 
-
-            $this->employees[$deepLvl][$id] = [
+            if ($parentId!='NULL') {
+                $this->employees[$deepLvl][$id] = [
+                    'id' => $id,
+                    'name' => $faker->name,
+                    'post' => $this->post[$deepLvl][$j],
+                    'DateEmp' => $faker->date(),
+                    'salary' => mt_rand(400, 2600),
+                    'parent_id' => $parentId
+                ];
+            }
+            else $this->employees[$deepLvl][$id] = [
                 'id' => $id,
                 'name' => $faker->name,
                 'post' => $this->post[$deepLvl][$j],
                 'DateEmp' => $faker->date(),
-                'salary' => mt_rand(400, 2600),
-                'parent_id' => $parentId
+                'salary' => mt_rand(400, 2600)
+
             ];
-
-
         }
     }
 }
