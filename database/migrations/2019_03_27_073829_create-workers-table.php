@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -19,10 +20,13 @@ class CreateWorkersTable extends Migration
             $table->string('post');
             $table->date('DateEmp');
             $table->integer('salary');
-            $table->bigInteger('parent_id')->unsigned()-> nullable();
+            $table->bigInteger('parent_id')->unsigned()-> nullable()->default(NULL);
             $table->timestamps();
 
             $table->foreign('parent_id')->references('id')->on('workers')->onDelete('set null');
+
+            DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
         });
 
 
