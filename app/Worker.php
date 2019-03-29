@@ -8,7 +8,7 @@ class Worker extends Model
 {
     public function boss()
     {
-        return $this->hasMany(Worker::class, 'id_boss');
+        return $this->hasMany(Worker::class, 'parentId');
     }
 
     public function worker()
