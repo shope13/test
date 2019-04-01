@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-<h1>Home for all users</h1>
+<h1>Employee hierarchy</h1>
 
     {{--@foreach($workers as $worker)--}}
 
@@ -17,8 +17,8 @@
 
             <li>
             <li><span class="caret">
-                BOSSSSSSSS
-                    {{--@include('worker')--}}
+
+                    @include('worker')
                 </span>
                 <ul class="nested">
                     <li>Саббосс</li>
