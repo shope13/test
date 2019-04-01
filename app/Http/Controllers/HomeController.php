@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Worker;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $workers = Worker::paginate(10000);
+        return view('home',['workers' => $workers]);
     }
 }
