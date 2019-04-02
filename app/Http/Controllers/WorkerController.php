@@ -9,7 +9,7 @@ class WorkerController extends Controller
 {
     public function index()
     {
-        $workers = Worker::paginate(10000);
+        $workers = Worker::paginate(100);
         return view('test', ['workers' => $workers]);
     }
 }
