@@ -14,13 +14,10 @@ class WorkersTableSeeder extends Seeder
     {
         $dbFiller = new DbFiller();
         $a = $dbFiller->getPreparedValues();
-//        dd($workers);
 
 
         $workers = array_reduce($a, 'array_merge', array());
-//        dd($workers);
 
-        // break data into max size of 200
         $chunks = array_chunk($workers, 1000);
 
         foreach ($chunks as $chunk) {
@@ -100,7 +97,7 @@ class DbFiller
 
 
             $j = mt_rand(1, count($this->post[$deepLvl]));
-//            dd($deepLvl,$j);
+
 
 
             $this->employees[$deepLvl][$id] = [
