@@ -1,24 +1,15 @@
 @if($worker)
-    @if($worker->boss==NULL)
-        <span class="caret">
+@if($worker->parent_id != NULL)
+    <span class="caret">
         {{$worker->name}}
-            {{$worker->post}}
+        {{$worker->post}}
         </span>
-    @endif
-    {{--    @if($worker->boss->implode('parent_id', ', ') == $worker->id))--}}
-
-    @if($worker->boss!=NULL)
-        <ul class="nested">
-            <li><span class="caret">
-        {{$worker->name}}
-                    {{$worker->post}}
-        </span></li></ul>
-    @endif
-    @foreach($worker->workerBoss as $emp)
-        @include('worker', ['worker' => $emp])
-    @endforeach
-
-
 @endif
 
+<ul class="nested">
+    @foreach($worker->workerBoss as $emp)
+        <li> @include('worker2', ['worker' => $emp])</li>
+    @endforeach
 
+</ul>
+@endif
