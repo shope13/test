@@ -2,9 +2,8 @@
     @if($worker->parent_id == NULL )
     <span class="caret">
         {{$worker->name}}
-        {{$worker->post}}
+        ({{$worker->post}})
         </span>
-
     @endif
 
     <ul class="nested">
