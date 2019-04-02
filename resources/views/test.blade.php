@@ -16,10 +16,10 @@
         @foreach ($workers as $worker)
 
             <li>
-            <li><span class="caret">
+            <li>
 
                     @include('worker')
-                </span>
+
                 <ul class="nested">
                     <li>Саббосс</li>
                     <li><span class="caret">Саббосс 2 уровня</span>
