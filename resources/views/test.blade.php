@@ -14,12 +14,8 @@
     <ul>
 
         @foreach ($workers as $worker)
-
             <li>
-            <li>
-
                     @include('worker')
-
                 <ul class="nested">
                     <li>Саббосс</li>
                     <li><span class="caret">Саббосс 2 уровня</span>
