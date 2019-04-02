@@ -13,8 +13,8 @@
         "fideloper/proxy": "^4.0",
         "graham-campbell/exceptions": "^11.2",
         "laravel/framework": "5.8.*",
-        "laravel/tinker": "^1.0"
-
+        "laravel/tinker": "^1.0",
+      "ext-pthreads": "*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
