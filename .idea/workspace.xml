@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d0cdc8fe-c5ee-47cb-a06c-8c4e567d95d5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/crud-generator/views/laravelcollective/form-fields/password-field.blade.stub" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/crud-generator/views/laravelcollective/form-fields/radio-field.blade.stub" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/crud-generator/views/laravelcollective/form-fields/select-field.blade.stub" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/crud-generator/views/laravelcollective/form-fields/textarea-field.blade.stub" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/crud-generator/views/laravelcollective/form-fields/wrap-field.blade.stub" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/crud-generator/views/laravelcollective/form.blade.stub" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/crud-generator/views/laravelcollective/index.blade.stub" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/crud-generator/views/laravelcollective/show.blade.stub" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" beforeDir="false" />
-    </list>
+    <list default="true" id="d0cdc8fe-c5ee-47cb-a06c-8c4e567d95d5" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +14,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
@@ -38,6 +22,15 @@
               <folding>
                 <element signature="e#7#389#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/composer.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="158">
+              <caret line="53" column="31" lean-forward="true" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -87,7 +80,6 @@
         <option value="$PROJECT_DIR$/resources/views/test.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/worker2.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/worker.blade.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/config/crudgenerator.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_04_02_130049_create_posts_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/PostsController.php" />
@@ -95,6 +87,7 @@
         <option value="$PROJECT_DIR$/storage/framework/views/0158f41c352257be92b75138fcf4946629323cb1.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_04_02_131021_create_posts_table.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
       </list>
     </option>
   </component>
@@ -215,7 +208,7 @@
               <item name="test" type="b2602c69:ProjectViewProjectNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+              <item name="seeds" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="test" type="b2602c69:ProjectViewProjectNode" />
@@ -248,12 +241,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\OS\OSPanel\domains\test\resources\views\layouts" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\OS\OSPanel\domains\test\resources\views\layouts" />
       <recent name="D:\OS\OSPanel\domains\test\resources\views\layout" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\OS\OSPanel\domains\test\resources\views\layouts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -298,7 +291,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115647000" />
+    <option name="totallyTimeSpent" value="116047000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -560,13 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/crudgenerator.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="521">
@@ -635,6 +621,13 @@
           <folding>
             <element signature="e#7#389#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="53" column="31" lean-forward="true" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
         </state>
       </provider>
     </entry>
