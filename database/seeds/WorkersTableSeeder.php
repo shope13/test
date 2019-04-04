@@ -31,7 +31,7 @@ class DbFiller
 {
     const MAX_DEEP = 5;
     const MIN_DEEP = 1;
-    const NEEDED_ROWS = 300;
+    const NEEDED_ROWS =20;
 
     public $employees = [
         1 => [],
