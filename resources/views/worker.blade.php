@@ -1,16 +1,16 @@
 @if($worker)
-    @if($worker->parent_id == NULL )
-    <span class="caret">
+        <span class="caret">
         {{$worker->name}}
         ({{$worker->post}})
         </span>
-    @endif
 
     <ul class="nested">
-            @foreach($worker->workerBoss as $emp)
-               <li> @include('worker2', ['worker' => $emp])</li>
-                    @endforeach
 
+        @foreach($worker->workerBoss as $emp)
+{{--            @dd($emp)--}}
+{{--            @dd(\App\Worker::with('workerBoss')->whereNotNull('parent_id')->get())--}}
+            <li> @include('worker', ['worker' => $emp])</li>
+        @endforeach
     </ul>
 
-    @endif
+@endif
