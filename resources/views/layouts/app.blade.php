@@ -9,12 +9,14 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-
+    <script type="text/javascript" src="jquery.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <link  rel = " stylesheet "  type = " text / css "  href = " gtreetable.min.css " />
     <script  type = " text / javascript "  src = " http://code.jquery.com/jquery-2.1.1.min.js " > </script >
     <script  type = " text / javascript "  src = " bootstrap-gtreetable.js " > </script>
+
+
 
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
