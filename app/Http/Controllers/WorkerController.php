@@ -13,8 +13,8 @@ class WorkerController extends Controller
         return view('test', ['workers' => $workers]);
     }
 
-//    public function emloyees($id)
-//    {
-//        return $this[$id]->with('employees')->whereNull('parent_id')->get();
-//    }
+    public function show($id)
+    {
+        return $this[$id]->employees;
+    }
 }
