@@ -19,7 +19,7 @@ class Worker extends Model
         return $this->belongsTo(Worker::class, 'id', 'parent_id');
     }
 
-    public function workerBoss()
+    public function employees()
     {
         return $this->hasMany(Worker::class, 'parent_id', 'id');
     }
