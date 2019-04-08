@@ -15,6 +15,7 @@ class WorkerController extends Controller
 
     public function show($id)
     {
-        return $this[$id]->employees;
+        $workers = Worker::with('employees')->get();
+        return $workers->employees;
     }
 }
