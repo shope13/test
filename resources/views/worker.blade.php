@@ -2,6 +2,7 @@
         <span class="caret">
         {{$worker->name}}
         ({{$worker->post}})
+            {{$worker->parent_id}}
         </span>
 
     <ul class="nested">
