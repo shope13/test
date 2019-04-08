@@ -12,4 +12,9 @@ class WorkerController extends Controller
         $workers = Worker::paginate(100);
         return view('test', ['workers' => $workers]);
     }
+
+//    public function emloyees($id)
+//    {
+//        return $this[$id]->with('employees')->whereNull('parent_id')->get();
+//    }
 }
