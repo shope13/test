@@ -9,8 +9,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script type="text/javascript" src="jquery.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/employeesScript.js') }}" defer></script>
 
     <link  rel = " stylesheet "  type = " text / css "  href = " gtreetable.min.css " />
     <script  type = " text / javascript "  src = " http://code.jquery.com/jquery-2.1.1.min.js " > </script >
