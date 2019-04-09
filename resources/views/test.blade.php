@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<script src="{{ asset('js/employeesScript.js') }}" defer></script>
 @section('content')
     <div class="container">
         <h1>Employee hierarchy</h1>
