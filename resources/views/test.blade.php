@@ -1,38 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-    <script>
-
-        $('body').on("click", ".parent", function (e) {
-            const element = this;
-            $.ajax({
-                url: ,
-                type: "POST",
-                data: {
-                    name: "Ne pidor!"
-                },
-                success: function (response) {
-                    $(element).append('<ul><li>' + response.name + '</li></ul>')
-                }
-            });
-
-
-        });
-    </script>
     <div class="container">
         <h1>Employee hierarchy</h1>
-        <ul>
-            @foreach(\App\Worker::with('employees')->whereNull('parent_id')->get() as $worker)
-            <li>
-                <div class='parent'>
-
+        <ul class="list-group">
+            @foreach($workers as $worker)
+            <li class="list-group-item">
+                <div class="parent" data-id="{{$worker->id}}">
+                    {{$worker->id}}
                     {{$worker->name}}
                         ({{$worker->post}})
+                    {{$worker->parent_id}}
 
                 </div>
-            </li>
                 @endforeach
+            {{$workers->render()}}
         </ul>
+
     </div>
 
 @endsection
