@@ -16,4 +16,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/{id}', 'WorkerController@show');
+Route::get('/{workers}', 'WorkerController@show')->name('show');
