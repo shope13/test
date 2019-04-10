@@ -16,4 +16,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 Route::get('/{workers}', 'WorkerController@show')->name('show');
