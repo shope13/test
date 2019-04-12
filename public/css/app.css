@@ -5545,13 +5545,6 @@ a.badge-dark.focus {
   border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-.list-group-item:hover {
-
-  background: #dedede; /* Цвет фона под ссылкой */
-  color: #212529; /* Цвет ссылки */
-  cursor: pointer;
-}
-
 .list-group-item:first-child {
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
@@ -5561,6 +5554,12 @@ a.badge-dark.focus {
   margin-bottom: 0;
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
+}
+
+.list-group-item:hover {
+
+  background: #dedede;
+  cursor: pointer;
 }
 
 .list-group-item.disabled,
