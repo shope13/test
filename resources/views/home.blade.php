@@ -1,22 +1,11 @@
 @extends('layouts.app')
-<script src="js/search.js"></script>
 @section('content')
     <div class="container">
         <h1>List of employees</h1>
 
         <div class="row">
-            <div class="col-md-3">
-                <form action="#" method="post">
-                    <div class="input-group">
-                        <input class="form-control" id="system-search" name="q" placeholder="Search for" required>
-                        <span class="input-group-btn">
-                        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
-                    </span>
-                    </div>
-                </form>
-            </div>
             <div class="col-md-9">
-                <table class="table table-list-search">
+                <table class="table table-list">
             <thead>
             <tr>
                 <th scope="col">id</th>
