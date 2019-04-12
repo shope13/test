@@ -1,5 +1,5 @@
-
-$('body').on("click", ".parent", function (e) {
+$(document).ready(function () {
+    $('body').on("click", ".parent", function (e) {
     const element = $(this).attr('data-id');
     const el = this;
     e.stopPropagation();
@@ -8,13 +8,20 @@ $('body').on("click", ".parent", function (e) {
         type: "GET",
         dataType: "json",
         success: function (response) {
+            if (!$(el).hasClass('clicked')) { // если класса нет
+                $(el).addClass('clicked'); // добавляем класс
                 jQuery.each(response, function (r) {
                     $(el).append('<ul class="list-group"><li class="list-group-item"><div class="parent" data-id="' + response[r].id + '">'
-                        + response[r].id + ' ' + response[r].name + ' ' + '(' + response[r].post + ')' + ' ' + response[r].parent_id
+                        + ' ' + response[r].name + ' ' + '(' + response[r].post + ')'
                         + '</li></div></ul>')
                 });
             }
+            else {
+                $(el).removeClass('clicked'); // убираем класс
+                $(el).children().remove();
+            }
+        }
 
     });
 });
-
+});
