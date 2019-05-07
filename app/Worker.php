@@ -16,7 +16,7 @@ class Worker extends Model
 
     public function boss()
     {
-        return $this->belongsTo(Worker::class, 'id', 'parent_id');
+        return $this->belongsTo(Worker::class, 'parent_id', 'id');
     }
 
     public function employees()
