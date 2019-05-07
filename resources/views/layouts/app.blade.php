@@ -3,25 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-
     <link  rel = " stylesheet "  type = " text / css "  href = " gtreetable.min.css " />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script  type = " text / javascript "  src = " http://code.jquery.com/jquery-2.1.1.min.js " > </script >
     <script  type = " text / javascript "  src = " bootstrap-gtreetable.js " > </script>
-
-
-
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    @yield('css')
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
-
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -81,5 +72,9 @@
     <main class="py-4">
         @yield('content')
     </main>
+@yield('js')
+<script src="{{ asset('js/app.js') }}" defer></script>
+
+
 </body>
 </html>
