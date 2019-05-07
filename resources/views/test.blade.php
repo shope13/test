@@ -1,5 +1,4 @@
 @extends('layouts.app')
-<script src="{{ asset('js/employeesScript.js') }}" defer></script>
 @section('content')
     <div class="container">
         <h1>Employee hierarchy</h1>
@@ -12,7 +11,11 @@
                 </div>
                 @endforeach
         </ul>
-        {{$workers->render()}}
+        <br>
+        <ul class="pagination">
+        {{$workers->links()}}
+        </ul>
     </div>
-
+    <script src="{{ asset('js/employeesScript.js') }}" defer></script>
 @endsection
+
