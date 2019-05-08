@@ -38,8 +38,8 @@
                 {!! request()->session()->get('field')=='DateEmp'?(request()->session()->get('sort')=='asc'?$textUp:$textDown):''!!}</th>
                 <th><a href="javascript:ajaxLoad('{{url('home?field=salary&sort='.(request()->session()->get('sort')=='asc'?'desc':'asc'))}}')">Salary</a>
                 {!! request()->session()->get('field')=='salary'?(request()->session()->get('sort')=='asc'?$textUp:$textDown):''!!}</th>
-                <th><a href="javascript:ajaxLoad('{{url('home?field=employees&sort='.(request()->session()->get('sort')=='asc'?'desc':'asc'))}}')">Boss</a>
-                {!! request()->session()->get('field')=='employees'?(request()->session()->get('sort')=='asc'?$textUp:$textDown):''!!}</th>
+                <th><a href="javascript:ajaxLoad('{{url('home?field=parent_id&sort='.(request()->session()->get('sort')=='asc'?'desc':'asc'))}}')">Boss</a>
+                {!! request()->session()->get('field')=='parent_id'?(request()->session()->get('sort')=='asc'?$textUp:$textDown):''!!}</th>
                 <th>
                     <a href="javascript:ajaxLoad('{{url('home/create')}}')"
                        class="btn btn-primary btn-xs"> <i class="fa fa-plus" aria-hidden="true"></i> Add new workers</a>
