@@ -8,8 +8,8 @@ $(document).ready(function () {
         type: "GET",
         dataType: "json",
         success: function (response) {
-            if (!$(el).hasClass('clicked')) { // если класса нет
-                $(el).addClass('clicked'); // добавляем класс
+            if (!$(el).hasClass('clicked')) {
+                $(el).addClass('clicked');
                 jQuery.each(response, function (r) {
                     $(el).append('<ul class="list-group"><li class="list-group-item"><div class="parent" data-id="' + response[r].id + '">'
                         + ' ' + response[r].name + ' ' + '(' + response[r].post + ')'
@@ -17,7 +17,7 @@ $(document).ready(function () {
                 });
             }
             else {
-                $(el).removeClass('clicked'); // убираем класс
+                $(el).removeClass('clicked');
                 $(el).children().remove();
             }
         }
