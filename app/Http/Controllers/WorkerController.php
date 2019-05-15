@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Worker;
-
+use Illuminate\Http\Request;
 class WorkerController extends Controller
 {
     public function index()
@@ -15,5 +15,11 @@ class WorkerController extends Controller
     public function show($id)
     {
         return Worker::find($id)->load('employees')->employees;
+    }
+
+    public function search(Request $request)
+    {
+        $workers = Worker::where('name', 'like', "%{$request->get('query')}%")->limit(50)->get();
+        return ['workers' => $workers];
     }
 }
