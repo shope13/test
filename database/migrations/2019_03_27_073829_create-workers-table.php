@@ -21,7 +21,6 @@ class CreateWorkersTable extends Migration
             $table->date('DateEmp');
             $table->integer('salary');
             $table->bigInteger('parent_id')->unsigned()-> nullable()->default(NULL);
-            $table->string('image')-> nullable()->default(NULL);
             $table->timestamps();
 
             $table->foreign('parent_id')->references('id')->on('workers')->onDelete('set null');
