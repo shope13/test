@@ -66,3 +66,29 @@ function ajaxDelete(filename, token, content) {
         }
     });
 }
+function renderWorker(worker) {
+    $('.boss-select').show();
+    $('.boss-select').append(
+      "<li class='list-group-item' data-id='" + worker.id + "'>" + worker.id + "." + " " + worker.name  + " - " + worker.post + "</li>"
+    );
+}
+$(document).on('keyup', '#parent_id', function(e){
+    console.log($(this).val());
+    $.ajax({
+        method: 'GET',
+        url: '/search',
+        data: {'query' : $(this).val()},
+        success: function(result) {
+            if (result.workers) {
+                $('.boss-select').empty();
+                result.workers.map(renderWorker)
+            }
+        }
+    })
+});
+$(document).on('click', '.boss-select li', function(){
+    $('.boss-select li').removeClass('active');
+    $(this).addClass('active');
+    $('input[name="parent_id"]').val($(this).data('id'));
+    $('.boss-select').hide();
+});
