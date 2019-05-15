@@ -22,5 +22,5 @@ Route::group(['prefix' => 'home'], function() {
     Route::delete('delete/{id}', 'HomeController@destroy');
 });
 
-
+Route::get('/search', 'WorkerController@search');
 Route::get('/{workers}', 'WorkerController@show')->name('show');
