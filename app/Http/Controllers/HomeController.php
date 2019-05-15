@@ -99,12 +99,7 @@ class HomeController extends Controller
             'DateEmp' => 'required',
             'salary' => 'required',
             'parent_id' => 'nullable|exists:workers,id',
-            'image' => 'required|mimes:jpeg,jpg|dimensions:min_width=1000,min_height=400'
         ];
-
-//        $image = $request->file('image')->storePublicly('public/images/home');
-//
-//        dd($image);
 
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails())
