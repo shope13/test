@@ -4,7 +4,7 @@ $(document).ready(function () {
     const el = this;
     e.stopPropagation();
     $.ajax({
-        url: "http://127.0.0.1:8000/"+element,
+        url: "/"+element,
         type: "GET",
         dataType: "json",
         success: function (response) {
@@ -24,4 +24,6 @@ $(document).ready(function () {
 
     });
 });
+
+
 });
