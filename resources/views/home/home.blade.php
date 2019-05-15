@@ -48,6 +48,9 @@
             </tr>
             </thead>
             <tbody>
+            @php
+                $i=1;
+            @endphp
             @foreach($workers as $worker)
             <tr>
                 <td>{{$worker->id}}</td>
