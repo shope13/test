@@ -72,13 +72,8 @@ class HomeController extends Controller
                 'fail' =>true,
                 'errors' => $validator->errors()
             ]);
-
-        $workers = new Worker();
-        $workers->name = $request->name;
-        $workers->post = $request->post;
-        $workers->DateEmp = $request->DateEmp;
-        $workers->salary = $request->salary;
-        $workers->save();
+            
+        $workers = Worker::create($request->all());
 
         return response()->json([
             'fail' => false,
@@ -103,7 +98,13 @@ class HomeController extends Controller
             'post' => 'required',
             'DateEmp' => 'required',
             'salary' => 'required',
+            'parent_id' => 'nullable|exists:workers,id',
+            'image' => 'required|mimes:jpeg,jpg|dimensions:min_width=1000,min_height=400'
         ];
+
+//        $image = $request->file('image')->storePublicly('public/images/home');
+//
+//        dd($image);
 
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails())
@@ -112,12 +113,7 @@ class HomeController extends Controller
                 'errors' => $validator->errors()
             ]);
 
-        $workers = Worker::find($id);
-        $workers->name = $request->name;
-        $workers->post = $request->post;
-        $workers->DateEmp = $request->DateEmp;
-        $workers->salary = $request->salary;
-        $workers->save();
+        $workers = Worker::find($id)->update($request->all());
 
         return response()->json([
             'fail' => false,
