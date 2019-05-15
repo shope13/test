@@ -10,7 +10,13 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Worker extends Model
 {
-
+    protected $fillable = [
+      'name',
+      'DateEmp',
+      'post',
+      'salary',
+      'parent_id',
+    ];
 
 
 
